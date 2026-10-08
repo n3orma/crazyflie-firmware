@@ -176,8 +176,8 @@ void controllerMellinger(controllerMellinger_t* self, control_t *control, const 
 
   // Calculate desired axes and current thrust
   if (setpoint->mode.x == modeAbs &&
-    setpoint->mode.y == modeAbs &&
-    setpoint->mode.z == modeAbs) {
+      setpoint->mode.y == modeAbs &&
+      setpoint->mode.z == modeAbs) {
     // Desired thrust [F_des]
     target_thrust.x = self->mass * setpoint->acceleration.x                       + self->kp_xy * r_error.x + self->kd_xy * v_error.x + self->ki_xy * self->i_error_x;
     target_thrust.y = self->mass * setpoint->acceleration.y                       + self->kp_xy * r_error.y + self->kd_xy * v_error.y + self->ki_xy * self->i_error_y;
