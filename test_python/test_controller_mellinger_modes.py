@@ -1,19 +1,7 @@
-"""Regression checks for the XYZ mode guard in issue #1628.
+"""Regression tests for Mellinger controller mode selection.
 
-Place this file in crazyflie-firmware/test_python/ on the branch containing
-commit 780ecffd95bbf27f768ddc55a27855332e8c66c9 (or the same guard change).
-From the repository root, after installing the build dependencies:
-
-    make cf2_defconfig
-    make bindings_python
-    PYTHONPATH=build python3 -m pytest test_python/test_controller_mellinger_modes.py -v
-
-These checks exercise the real controller through the repository's Python
-bindings. They do not simulate a flight or test radio timeout handling.
-The Z-velocity case checks horizontal fallback selection only; it does not
-establish that the existing fallback's altitude behavior is correct.
+Mixed-mode cases verify branch selection, not complete velocity control.
 """
-
 import math
 
 import cffirmware
